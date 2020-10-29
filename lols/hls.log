@@ -1,0 +1,912 @@
+2020-10-29 10:54:46.175560176 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:54:46.179970893 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":19518,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:54:46.199483849 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:54:46.240859028 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:54:46.245350769 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["19613:eval:evalCommand","19613:ghcide:typesignature.add","19613:importLens:ImportLensCommand","19613:pragmas:addPragma","19613:retrie:retrieCommand","19613:tactic:tacticsAutoCommand","19613:tactic:tacticsIntrosCommand","19613:tactic:tacticsDestructCommand","19613:tactic:tacticsHomomorphismCommand","19613:tactic:tacticsDestructLambdaCaseCommand","19613:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:54:46.246895251 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:54:46.24707499 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: IO ()\nsomeFunc = putStrLn \"someFunc\"\n","uri":"file:///tmp/lols/src/Lib.hs","version":0}}}
+2020-10-29 10:54:46.247770365 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:54:46.248636819 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":1}
+2020-10-29 10:54:46.248819122 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:54:46.249812574 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:54:46.249921319 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:54:46.250019929 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:54:46.250107838 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:54:46.250270453 [ThreadId 21] - Opened text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:54:46.251729608 [ThreadId 57] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:54:46.253746906 [ThreadId 63] - Consulting the cradle for "src/Lib.hs"
+2020-10-29 10:54:46.25488452 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"type":2,"message":"No [cradle](https://github.com/mpickering/hie-bios#hie-bios) found for src/Lib.hs.\n Proceeding with [implicit cradle](https://hackage.haskell.org/package/implicit-hie)"},"method":"window/showMessage"}
+2020-10-29 10:54:48.592610669 [ThreadId 63] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-i/tmp/lols/src","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-optP-include","-optP/tmp/lols/.stack-work/ghci/46cf6a0e/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/6f695459/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:54:48.682867886 [ThreadId 63] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-831f25c391879b95c55ac15ed4cd5092b3ac9c22
+2020-10-29 10:54:48.68339032 [ThreadId 63] - Making new HscEnv[main]
+2020-10-29 10:54:48.702605164 [ThreadId 63] - New Component Cache HscEnvEq: (([],Just HscEnvEq 2),fromList [("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:54:48.706806038 [ThreadId 63] - Known files updated: fromList [(TargetModule Lib,["/tmp/lols/src/Lib.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/Paths_lols.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/src/Lib.hs",["/tmp/lols/src/Lib.hs"])]
+2020-10-29 10:54:48.70746173 [ThreadId 63] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:54:48.707574623 [ThreadId 36] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:54:48.815557625 [ThreadId 315] - finish: codeLens (took 0.11s)
+2020-10-29 10:54:48.815602893 [ThreadId 316] - finish: kick (took 0.11s)
+2020-10-29 10:54:48.815957166 [ThreadId 323] - finish:  (took 0.00s)
+2020-10-29 10:54:48.81623126 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}
+2020-10-29 10:54:48.83949705 [ThreadId 328] - finish: InitialLoad (took 0.13s)
+2020-10-29 10:55:02.859394956 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:55:02.85976405 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":19968,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:55:02.860155294 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:55:02.868576424 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:55:02.869005163 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["20059:eval:evalCommand","20059:ghcide:typesignature.add","20059:importLens:ImportLensCommand","20059:pragmas:addPragma","20059:retrie:retrieCommand","20059:tactic:tacticsAutoCommand","20059:tactic:tacticsIntrosCommand","20059:tactic:tacticsDestructCommand","20059:tactic:tacticsHomomorphismCommand","20059:tactic:tacticsDestructLambdaCaseCommand","20059:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:55:02.870039747 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:55:02.870154593 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: IO ()\nsomeFunc = putStrLn \"someFunc\"\n","uri":"file:///tmp/lols/src/Lib.hs","version":0}}}
+2020-10-29 10:55:02.870274658 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:55:02.870325838 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":1}
+2020-10-29 10:55:02.870466998 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:02.87076875 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:55:02.870826919 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:55:02.870935595 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:02.870992637 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:02.871098093 [ThreadId 21] - Opened text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:55:02.871230769 [ThreadId 51] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:02.871739003 [ThreadId 65] - Consulting the cradle for "src/Lib.hs"
+2020-10-29 10:55:04.338189608 [ThreadId 65] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-i/tmp/lols/src","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-optP-include","-optP/tmp/lols/.stack-work/ghci/46cf6a0e/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/6f695459/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:55:04.374577433 [ThreadId 65] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-831f25c391879b95c55ac15ed4cd5092b3ac9c22
+2020-10-29 10:55:04.37470902 [ThreadId 65] - Making new HscEnv[main]
+2020-10-29 10:55:04.38027023 [ThreadId 65] - New Component Cache HscEnvEq: (([],Just HscEnvEq 2),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:55:04.382307711 [ThreadId 65] - Known files updated: fromList [(TargetModule Lib,["/tmp/lols/src/Lib.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/Paths_lols.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/src/Lib.hs",["/tmp/lols/src/Lib.hs"])]
+2020-10-29 10:55:04.382849089 [ThreadId 65] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:04.382935147 [ThreadId 36] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:04.412601265 [ThreadId 226] - finish: codeLens (took 0.03s)
+2020-10-29 10:55:04.412690396 [ThreadId 227] - finish: kick (took 0.03s)
+2020-10-29 10:55:04.412769792 [ThreadId 230] - finish: InitialLoad (took 0.03s)
+2020-10-29 10:55:04.413072572 [ThreadId 235] - finish:  (took 0.00s)
+2020-10-29 10:55:04.413256747 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}
+2020-10-29 10:55:04.427451787 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/hover","params":{"position":{"character":11,"line":5},"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":2}
+2020-10-29 10:55:04.428138545 [ThreadId 239] - GhcIde.hover entered (ideLogger)
+2020-10-29 10:55:04.428263299 [ThreadId 239] - Hover request at position 6:12 in file: /tmp/lols/src/Lib.hs
+2020-10-29 10:55:04.428726544 [ThreadId 244] - finish: C:GetHieAst (took 0.00s)
+2020-10-29 10:55:04.43165167 [ThreadId 249] - finish: C:GetDocMap (took 0.00s)
+2020-10-29 10:55:04.434082789 [ThreadId 7] - <--2--{"result":{"contents":{"kind":"markdown","value":"\n```haskell\nputStrLn :: String -> IO ()\n```\n\n*Defined in ‘System.IO’*\n\n\nThe same as  `putStr` , but adds a newline character.\n\n\n[Documentation](file:///home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/share/doc/ghc-8.8.4/html/libraries/base-4.13.0.0/System-IO.html#v:putStrLn)\n[Source](file:///home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/share/doc/ghc-8.8.4/html/libraries/base-4.13.0.0/src/System-IO.html#putStrLn)\n\n"},"range":{"start":{"line":5,"character":11},"end":{"line":5,"character":19}}},"jsonrpc":"2.0","id":2}
+2020-10-29 10:55:07.385400835 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"main :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n","uri":"file:///tmp/lols/test/Spec.hs","version":0}}}
+2020-10-29 10:55:07.385541422 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":3}
+2020-10-29 10:55:07.385668224 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:07.385820515 [ThreadId 84] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:07.385875811 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:07.385919868 [ThreadId 21] - Opened text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:07.386052986 [ThreadId 269] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:07.386454512 [ThreadId 283] - Consulting the cradle for "test/Spec.hs"
+2020-10-29 10:55:09.717963059 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":1}}}
+2020-10-29 10:55:09.719001494 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":4}
+2020-10-29 10:55:09.719139357 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:09.719486331 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:09.719595328 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:09.719712071 [ThreadId 332] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:09.719708783 [ThreadId 254] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:09.9748694 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"i\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":2}}}
+2020-10-29 10:55:09.975161534 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":5}
+2020-10-29 10:55:09.975274402 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:09.975506493 [ThreadId 326] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:09.975563289 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:09.975610939 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:09.975769242 [ThreadId 413] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.122119231 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"im\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":3}}}
+2020-10-29 10:55:10.122365041 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":6}
+2020-10-29 10:55:10.122481658 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.122825287 [ThreadId 396] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.122919092 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.123071881 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.123185866 [ThreadId 477] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.300040676 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"imp\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":4}}}
+2020-10-29 10:55:10.300252378 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":7}
+2020-10-29 10:55:10.300396469 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.300713427 [ThreadId 462] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.300794693 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.300835399 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.301063459 [ThreadId 550] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.369211536 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"impo\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":5}}}
+2020-10-29 10:55:10.369425411 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":8}
+2020-10-29 10:55:10.369546619 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.369937483 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.370104693 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.370208701 [ThreadId 610] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.370182741 [ThreadId 531] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.49317942 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"impor\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":6}}}
+2020-10-29 10:55:10.493476518 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":9}
+2020-10-29 10:55:10.493582202 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.49395858 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.494032655 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.494160258 [ThreadId 674] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.494140208 [ThreadId 599] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.518364012 [ThreadId 283] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test","-i/tmp/lols/test","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/lols-test-tmp","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-package-id=lols-0.1.0.0-HWdZs8N8U517rrHkgeb9yv","-rtsopts","-with-rtsopts=-N","-optP-include","-optP/tmp/lols/.stack-work/ghci/382e1dbe/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/bba63d2d/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:55:10.553276009 [ThreadId 283] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-128db985f583e7e0dd97e5cebd21bd340fb08cc0
+2020-10-29 10:55:10.553410067 [ThreadId 283] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-128db985f583e7e0dd97e5cebd21bd340fb08cc0
+2020-10-29 10:55:10.553463591 [ThreadId 283] - Making new HscEnv[main,main]
+2020-10-29 10:55:10.559111542 [ThreadId 283] - New Component Cache HscEnvEq: (([],Just HscEnvEq 16),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:55:10.560011944 [ThreadId 283] - New Component Cache HscEnvEq: (([],Just HscEnvEq 17),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:55:10.562455556 [ThreadId 283] - Known files updated: fromList [(TargetModule Lib,["/tmp/lols/src/Lib.hs","/tmp/lols/src/Lib.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/test/Spec.hs",["/tmp/lols/src/Lib.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/Paths_lols.hs","/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/Paths_lols.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/src/Lib.hs",["/tmp/lols/src/Lib.hs"])]
+2020-10-29 10:55:10.562868878 [ThreadId 666] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.562953545 [ThreadId 283] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.573759436 [ThreadId 889] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.573874732 [ThreadId 890] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.573892668 [ThreadId 892] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.5739299 [ThreadId 888] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.57398435 [ThreadId 891] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.57416501 [ThreadId 748] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.576765923 [ThreadId 890] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.576771957 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":5}},"source":"typecheck","message":"Parse error: module header, import declaration\nor top-level declaration expected."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:10.576775059 [ThreadId 895] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576795029 [ThreadId 896] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576832049 [ThreadId 891] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576865792 [ThreadId 748] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576901703 [ThreadId 895] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576896654 [ThreadId 890] - finish:  (took 0.00s)
+2020-10-29 10:55:10.576894557 [ThreadId 833] - finish:  (took 0.00s)
+2020-10-29 10:55:10.581007803 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":7}
+2020-10-29 10:55:10.581250402 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":4}
+2020-10-29 10:55:10.581393101 [ThreadId 924] - finish: kick (took 0.02s)
+2020-10-29 10:55:10.581426549 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":9}
+2020-10-29 10:55:10.581578687 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":6}
+2020-10-29 10:55:10.581726888 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":8}
+2020-10-29 10:55:10.581879705 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":3}
+2020-10-29 10:55:10.582016303 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":5}
+2020-10-29 10:55:10.597492977 [ThreadId 929] - finish: InitialLoad (took 0.03s)
+2020-10-29 10:55:10.670804408 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":7}}}
+2020-10-29 10:55:10.671526554 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":10}
+2020-10-29 10:55:10.671919319 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.672538834 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.672935471 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.673260999 [ThreadId 941] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.673230141 [ThreadId 735] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.680465832 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:10.680646473 [ThreadId 1000] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.680753797 [ThreadId 1001] - finish: kick (took 0.01s)
+2020-10-29 10:55:10.682421365 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"},{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:10.68319961 [ThreadId 1012] - finish:  (took 0.00s)
+2020-10-29 10:55:10.684024021 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":10}
+2020-10-29 10:55:10.794551823 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import \nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":8}}}
+2020-10-29 10:55:10.795267795 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":11}
+2020-10-29 10:55:10.795641126 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:10.796084576 [ThreadId 933] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:10.796262582 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:10.79643994 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:10.796965681 [ThreadId 1032] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:10.804251256 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:10.80440417 [ThreadId 1084] - finish: kick (took 0.01s)
+2020-10-29 10:55:10.804307633 [ThreadId 1085] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:10.805993942 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"},{"severity":1,"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"source":"parser","message":"parse error (possibly incorrect indentation or mismatched brackets)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:10.807008565 [ThreadId 1096] - finish:  (took 0.00s)
+2020-10-29 10:55:10.807716569 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":11}
+2020-10-29 10:55:11.128647818 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import L\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":9}}}
+2020-10-29 10:55:11.129374616 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":12}
+2020-10-29 10:55:11.129752205 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:11.13044509 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:11.130667138 [ThreadId 1017] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:11.130920168 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:11.131176679 [ThreadId 1109] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:11.154455665 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":8}},"source":"not found","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.166697153 [ThreadId 1183] - finish: codeLens (took 0.03s)
+2020-10-29 10:55:11.166766043 [ThreadId 1184] - finish: kick (took 0.03s)
+2020-10-29 10:55:11.166796779 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":8}},"source":"not found","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":8}},"source":"typecheck","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.167760706 [ThreadId 1188] - finish:  (took 0.00s)
+2020-10-29 10:55:11.168573556 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":12}
+2020-10-29 10:55:11.219586412 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import LI\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":10}}}
+2020-10-29 10:55:11.22033001 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":13}
+2020-10-29 10:55:11.220741848 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:11.221152666 [ThreadId 1101] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:11.221339023 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:11.221690914 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:11.222002033 [ThreadId 1208] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:11.247298404 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.260901835 [ThreadId 1276] - finish: kick (took 0.04s)
+2020-10-29 10:55:11.260991297 [ThreadId 1275] - finish: codeLens (took 0.04s)
+2020-10-29 10:55:11.261024382 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":9}},"source":"typecheck","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.261586905 [ThreadId 1280] - finish:  (took 0.00s)
+2020-10-29 10:55:11.262185868 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":13}
+2020-10-29 10:55:11.411820293 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import LIb\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":11}}}
+2020-10-29 10:55:11.412534237 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":14}
+2020-10-29 10:55:11.412910329 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:11.413776807 [ThreadId 1193] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:11.414029154 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:11.414371908 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:11.414786936 [ThreadId 1301] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:11.440400237 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":10}},"source":"not found","message":"Could not find module ‘LIb’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.453489022 [ThreadId 1368] - finish: codeLens (took 0.04s)
+2020-10-29 10:55:11.453588075 [ThreadId 1367] - finish: kick (took 0.04s)
+2020-10-29 10:55:11.453654575 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":10}},"source":"not found","message":"Could not find module ‘LIb’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"Could not find module ‘LIb’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.454093568 [ThreadId 1372] - finish:  (took 0.00s)
+2020-10-29 10:55:11.454483553 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":14}
+2020-10-29 10:55:11.937753585 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import LI\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":12}}}
+2020-10-29 10:55:11.938524445 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":15}
+2020-10-29 10:55:11.938900921 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:11.939683874 [ThreadId 1285] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:11.939926722 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:11.940228337 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:11.940546979 [ThreadId 1385] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:11.965559251 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.98002413 [ThreadId 1459] - finish: codeLens (took 0.04s)
+2020-10-29 10:55:11.980061265 [ThreadId 1460] - finish: kick (took 0.04s)
+2020-10-29 10:55:11.980131631 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":9}},"source":"typecheck","message":"Could not find module ‘LI’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:11.980631706 [ThreadId 1464] - finish:  (took 0.00s)
+2020-10-29 10:55:11.981121544 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":15}
+2020-10-29 10:55:12.062666627 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import L\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":13}}}
+2020-10-29 10:55:12.063417869 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":16}
+2020-10-29 10:55:12.063796307 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:12.064555468 [ThreadId 1377] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:12.0644876 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:12.065024034 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:12.065328624 [ThreadId 1475] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:12.08760961 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":8}},"source":"not found","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:12.103883415 [ThreadId 1551] - finish: codeLens (took 0.04s)
+2020-10-29 10:55:12.103925344 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":8}},"source":"not found","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":8}},"source":"typecheck","message":"Could not find module ‘L’\nIt is not a module in the current program, or in any known package."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:12.104003365 [ThreadId 1552] - finish: kick (took 0.04s)
+2020-10-29 10:55:12.104432227 [ThreadId 1556] - finish:  (took 0.00s)
+2020-10-29 10:55:12.104865732 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":16}
+2020-10-29 10:55:12.227796817 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Li\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":14}}}
+2020-10-29 10:55:12.228521595 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":17}
+2020-10-29 10:55:12.228912198 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:12.229578344 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:12.230031108 [ThreadId 1469] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:12.230195442 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:12.230493947 [ThreadId 1573] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:12.256225863 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘Li’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:12.272699288 [ThreadId 1644] - finish: codeLens (took 0.04s)
+2020-10-29 10:55:12.272775987 [ThreadId 1643] - finish: kick (took 0.04s)
+2020-10-29 10:55:12.272859369 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":7},"end":{"line":0,"character":9}},"source":"not found","message":"Could not find module ‘Li’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"},{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":9}},"source":"typecheck","message":"Could not find module ‘Li’\nPerhaps you meant\n  Lib (needs flag -package-key libiserv-8.8.4)\n  Lib (from lols-0.1.0.0)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:12.273831441 [ThreadId 1648] - finish:  (took 0.00s)
+2020-10-29 10:55:12.274721227 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":17}
+2020-10-29 10:55:12.362692085 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":15}}}
+2020-10-29 10:55:12.363678452 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":18}
+2020-10-29 10:55:12.364090837 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:12.364738793 [ThreadId 1561] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:12.364975145 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:12.365320338 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:12.365663143 [ThreadId 1668] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:12.391082942 [ThreadId 1771] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:12.391195296 [ThreadId 1770] - finish: kick (took 0.03s)
+2020-10-29 10:55:12.391190801 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"The import of ‘Lib’ is redundant\n  except perhaps to import instances from ‘Lib’\nTo import instances alone, use: import Lib()","tags":[1]}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:12.39211295 [ThreadId 1775] - finish:  (took 0.00s)
+2020-10-29 10:55:12.394389517 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":18}
+2020-10-29 10:55:13.692569907 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":16}}}
+2020-10-29 10:55:13.693293343 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":19}
+2020-10-29 10:55:13.693676761 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:13.694488544 [ThreadId 1653] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:13.694738942 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:13.695042551 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:13.695470843 [ThreadId 1795] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:13.711660951 [ThreadId 1878] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:13.711804105 [ThreadId 1877] - finish: kick (took 0.02s)
+2020-10-29 10:55:13.712656493 [ThreadId 1882] - finish:  (took 0.00s)
+2020-10-29 10:55:13.71370455 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":19}
+2020-10-29 10:55:14.800692939 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  \n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":17}}}
+2020-10-29 10:55:14.801436908 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":20}
+2020-10-29 10:55:14.802083393 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:14.802955009 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:14.803344125 [ThreadId 1780] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:14.803466485 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:14.803817164 [ThreadId 1898] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:14.819692286 [ThreadId 1984] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:14.819712376 [ThreadId 1985] - finish: kick (took 0.02s)
+2020-10-29 10:55:14.820666943 [ThreadId 1989] - finish:  (took 0.00s)
+2020-10-29 10:55:14.821814621 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":20}
+2020-10-29 10:55:15.111702176 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  s\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":18}}}
+2020-10-29 10:55:15.112462988 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":21}
+2020-10-29 10:55:15.112817707 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:15.115034773 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:15.115411387 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:15.115688336 [ThreadId 2002] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:15.115670548 [ThreadId 1887] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:15.13299472 [ThreadId 2091] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:15.133179529 [ThreadId 2092] - finish: kick (took 0.02s)
+2020-10-29 10:55:15.133083432 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"The import of ‘Lib’ is redundant\n  except perhaps to import instances from ‘Lib’\nTo import instances alone, use: import Lib()","tags":[1]},{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":3}},"source":"typecheck","message":"Variable not in scope: s :: (String -> IO ()) -> [Char] -> IO ()"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:15.134072114 [ThreadId 2096] - finish:  (took 0.00s)
+2020-10-29 10:55:15.135141533 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":21}
+2020-10-29 10:55:15.183575054 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  so\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":19}}}
+2020-10-29 10:55:15.18431879 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":22}
+2020-10-29 10:55:15.184711296 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:15.185425683 [ThreadId 1994] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:15.18536477 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:15.185892285 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:15.186163647 [ThreadId 2107] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:15.203984071 [ThreadId 2198] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:15.204005516 [ThreadId 2199] - finish: kick (took 0.02s)
+2020-10-29 10:55:15.204049357 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"The import of ‘Lib’ is redundant\n  except perhaps to import instances from ‘Lib’\nTo import instances alone, use: import Lib()","tags":[1]},{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":4}},"source":"typecheck","message":"Variable not in scope: so :: (String -> IO ()) -> [Char] -> IO ()"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:15.205003017 [ThreadId 2203] - finish:  (took 0.00s)
+2020-10-29 10:55:15.206183992 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":22}
+2020-10-29 10:55:15.303651106 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  som\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":20}}}
+2020-10-29 10:55:15.304380015 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":23}
+2020-10-29 10:55:15.305001437 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:15.305482457 [ThreadId 2101] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:15.30568449 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:15.305961328 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:15.306458042 [ThreadId 2223] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:15.323505207 [ThreadId 2306] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:15.323681673 [ThreadId 2305] - finish: kick (took 0.02s)
+2020-10-29 10:55:15.323787119 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"The import of ‘Lib’ is redundant\n  except perhaps to import instances from ‘Lib’\nTo import instances alone, use: import Lib()","tags":[1]},{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":5}},"source":"typecheck","message":"• Variable not in scope:\n    som :: (String -> IO ()) -> [Char] -> IO ()\n• Perhaps you meant ‘sum’ (imported from Prelude)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:15.324575692 [ThreadId 2310] - finish:  (took 0.00s)
+2020-10-29 10:55:15.325708028 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":23}
+2020-10-29 10:55:15.369722605 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  some\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":21}}}
+2020-10-29 10:55:15.370472767 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":24}
+2020-10-29 10:55:15.371108677 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:15.371850663 [ThreadId 2208] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:15.372088112 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:15.37226881 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:15.372893763 [ThreadId 2330] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:15.39160741 [ThreadId 2413] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:15.391812281 [ThreadId 2412] - finish: kick (took 0.02s)
+2020-10-29 10:55:15.391767365 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"source":"typecheck","message":"The import of ‘Lib’ is redundant\n  except perhaps to import instances from ‘Lib’\nTo import instances alone, use: import Lib()","tags":[1]},{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":6}},"source":"typecheck","message":"Variable not in scope: some :: (String -> IO ()) -> [Char] -> IO ()"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:15.392719406 [ThreadId 2417] - finish:  (took 0.00s)
+2020-10-29 10:55:15.394134428 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ()"}]}}],"title":"import Lib ()"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":24}
+2020-10-29 10:55:15.706561574 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":22}}}
+2020-10-29 10:55:15.706774706 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":25}
+2020-10-29 10:55:15.706900582 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:15.707312403 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:15.707301554 [ThreadId 2315] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:15.707470267 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:15.707544841 [ThreadId 2432] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:15.711914187 [ThreadId 2520] - finish: kick (took 0.00s)
+2020-10-29 10:55:15.71192098 [ThreadId 2519] - finish: codeLens (took 0.00s)
+2020-10-29 10:55:15.711934469 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":4,"character":43}},"source":"typecheck","message":"• Couldn't match expected type ‘(String -> IO ())\n                                -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to two arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:15.712261049 [ThreadId 2524] - finish:  (took 0.00s)
+2020-10-29 10:55:15.712686546 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":25}
+2020-10-29 10:55:17.055020146 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":23}}}
+2020-10-29 10:55:17.055759998 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":26}
+2020-10-29 10:55:17.056134211 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.056916873 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.057186697 [ThreadId 2422] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.057492516 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.057886519 [ThreadId 2540] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:17.074781268 [ThreadId 2627] - finish: kick (took 0.02s)
+2020-10-29 10:55:17.074702649 [ThreadId 2626] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:17.075240772 [ThreadId 2631] - finish:  (took 0.00s)
+2020-10-29 10:55:17.075648398 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":26}
+2020-10-29 10:55:17.336849709 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":24}}}
+2020-10-29 10:55:17.337646106 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":27}
+2020-10-29 10:55:17.337987189 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.338766058 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.339140394 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.339473052 [ThreadId 2645] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:17.339453893 [ThreadId 2529] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.347056051 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":12},"end":{"line":3,"character":12}},"source":"parser","message":"lexical error in string/character literal at character '\\n'"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:17.347266073 [ThreadId 2703] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:17.347277162 [ThreadId 2704] - finish: kick (took 0.01s)
+2020-10-29 10:55:17.353175876 [ThreadId 2734] - finish:  (took 0.01s)
+2020-10-29 10:55:17.354016211 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":27}
+2020-10-29 10:55:17.504732001 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \"l\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":25}}}
+2020-10-29 10:55:17.50546538 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":28}
+2020-10-29 10:55:17.505996325 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.506702133 [ThreadId 2636] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.506977116 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.507478486 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.507855331 [ThreadId 2754] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:17.514596148 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":13},"end":{"line":3,"character":13}},"source":"parser","message":"lexical error in string/character literal at character '\\n'"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:17.514805159 [ThreadId 2807] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:17.514863633 [ThreadId 2806] - finish: kick (took 0.01s)
+2020-10-29 10:55:17.520860794 [ThreadId 2837] - finish:  (took 0.01s)
+2020-10-29 10:55:17.52189418 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":28}
+2020-10-29 10:55:17.645837739 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \"lo\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":26}}}
+2020-10-29 10:55:17.646586767 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":29}
+2020-10-29 10:55:17.64697847 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.647693812 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.648356235 [ThreadId 2739] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.648277961 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.64886249 [ThreadId 2856] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:17.655820967 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":14},"end":{"line":3,"character":14}},"source":"parser","message":"lexical error in string/character literal at character '\\n'"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:17.655959513 [ThreadId 2910] - finish: codeLens (took 0.01s)
+2020-10-29 10:55:17.656032095 [ThreadId 2909] - finish: kick (took 0.01s)
+2020-10-29 10:55:17.661565069 [ThreadId 2940] - finish:  (took 0.01s)
+2020-10-29 10:55:17.662541789 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":29}
+2020-10-29 10:55:17.806087943 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \"lol\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":27}}}
+2020-10-29 10:55:17.806305428 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":30}
+2020-10-29 10:55:17.806404526 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.806662008 [ThreadId 2842] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.806717146 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.806845164 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.806905635 [ThreadId 2960] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:17.808445115 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":15},"end":{"line":3,"character":15}},"source":"parser","message":"lexical error in string/character literal at character '\\n'"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:17.80847476 [ThreadId 3013] - finish: codeLens (took 0.00s)
+2020-10-29 10:55:17.808527707 [ThreadId 3012] - finish: kick (took 0.00s)
+2020-10-29 10:55:17.809866741 [ThreadId 3043] - finish:  (took 0.00s)
+2020-10-29 10:55:17.810119921 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":30}
+2020-10-29 10:55:17.99474627 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\nmain :: IO ()\nmain = \n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":28}}}
+2020-10-29 10:55:17.995479733 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":31}
+2020-10-29 10:55:17.995884858 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:17.996707466 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:17.997100732 [ThreadId 2945] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:17.99720261 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:17.997555353 [ThreadId 3059] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:18.014355459 [ThreadId 3145] - finish: kick (took 0.02s)
+2020-10-29 10:55:18.014243723 [ThreadId 3146] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:18.014264554 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":2},"end":{"line":4,"character":43}},"source":"typecheck","message":"• Couldn't match expected type ‘[Char]\n                                -> (String -> IO ()) -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to three arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc \"lol\" putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc \"lol\" putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:18.015347542 [ThreadId 3150] - finish:  (took 0.00s)
+2020-10-29 10:55:18.016596398 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":31}
+2020-10-29 10:55:19.10213258 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib\n\nmain :: IO ()\nmain = \n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":29}}}
+2020-10-29 10:55:19.102907901 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":32}
+2020-10-29 10:55:19.1032682 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:19.104008211 [ThreadId 3048] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:19.104199132 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:19.104539843 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:19.104893263 [ThreadId 3170] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:19.121612367 [ThreadId 3253] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:19.121750787 [ThreadId 3252] - finish: kick (took 0.02s)
+2020-10-29 10:55:19.12175914 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":2},"end":{"line":5,"character":43}},"source":"typecheck","message":"• Couldn't match expected type ‘[Char]\n                                -> (String -> IO ()) -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to three arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc \"lol\" putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc \"lol\" putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:19.122172988 [ThreadId 3257] - finish:  (took 0.00s)
+2020-10-29 10:55:19.122484566 [ThreadId 7] - <--2--{"result":[{"command":{"command":"20059:importLens:ImportLensCommand","arguments":[{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}}],"title":"import Lib ( someFunc )"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}}}],"jsonrpc":"2.0","id":32}
+2020-10-29 10:55:19.960771661 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeAction","params":{"context":{"diagnostics":[]},"range":{"end":{"character":0,"line":0},"start":{"character":0,"line":0}},"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":33}
+2020-10-29 10:55:19.964811144 [ThreadId 3262] - finish: CodeAction (took 0.00s)
+2020-10-29 10:55:20.219367375 [ThreadId 3268] - finish: CodeAction:PackageExports (took 0.25s)
+2020-10-29 10:55:20.219764185 [ThreadId 3269] - finish: importLens (took 0.00s)
+2020-10-29 10:55:20.219932994 [ThreadId 3271] - finish: MinimalImports (took 0.00s)
+2020-10-29 10:55:20.222244733 [ThreadId 3273] - finish: retrie (took 0.00s)
+2020-10-29 10:55:20.222772618 [ThreadId 3278] - finish: tactic (took 0.00s)
+2020-10-29 10:55:20.223113824 [ThreadId 3282] - finish: tactic (took 0.00s)
+2020-10-29 10:55:20.223261144 [ThreadId 3283] - finish: tactic (took 0.00s)
+2020-10-29 10:55:20.223455735 [ThreadId 7] - <--2--{"result":[{"edit":{"changes":{"file:///tmp/lols/test/Spec.hs":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":10}},"newText":"import Lib ( someFunc )"}]}},"kind":"quickfix","title":"Make all imports explicit"}],"jsonrpc":"2.0","id":33}
+2020-10-29 10:55:21.548848529 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain = \n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":30}}}
+2020-10-29 10:55:21.549036339 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":34}
+2020-10-29 10:55:21.549153532 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:21.549442165 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:21.54957868 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:21.549531331 [ThreadId 3155] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:21.549653477 [ThreadId 3299] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:21.554082829 [ThreadId 3387] - finish: kick (took 0.00s)
+2020-10-29 10:55:21.554082319 [ThreadId 3386] - finish: codeLens (took 0.00s)
+2020-10-29 10:55:21.554339842 [ThreadId 3391] - finish:  (took 0.00s)
+2020-10-29 10:55:21.554673509 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":34}
+2020-10-29 10:55:26.820558596 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain =\n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":31}}}
+2020-10-29 10:55:26.821313942 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":35}
+2020-10-29 10:55:26.821707006 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:26.822443925 [ThreadId 3289] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:26.822414534 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:26.822995766 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:26.82334222 [ThreadId 3407] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:26.840402968 [ThreadId 3494] - finish: kick (took 0.02s)
+2020-10-29 10:55:26.840353226 [ThreadId 3493] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:26.840863224 [ThreadId 3498] - finish:  (took 0.00s)
+2020-10-29 10:55:26.841297911 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":35}
+2020-10-29 10:55:26.843243202 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":36}
+2020-10-29 10:55:26.846131486 [ThreadId 3503] - finish: Formatter (took 0.00s)
+2020-10-29 10:55:26.846189843 [ThreadId 3502] - Formatter.doFormatting: contents="import Lib ( someFunc )\n\nmain :: IO ()\nmain =\n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"
+2020-10-29 10:55:26.846320068 [ThreadId 3505] - finish: Ormolu (took 0.00s)
+2020-10-29 10:55:26.914208753 [ThreadId 7] - <--2--{"result":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":23}},"newText":"import Lib (someFunc)"},{"range":{"start":{"line":4,"character":0},"end":{"line":5,"character":43}},"newText":"  someFunc\n    \"lol\"\n    putStrLn\n    \"Test suite not yet implemented\""}],"jsonrpc":"2.0","id":36}
+2020-10-29 10:55:26.928168979 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib (someFunc)\n\nmain :: IO ()\nmain =\n  someFunc\n    \"lol\"\n    putStrLn\n    \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":32}}}
+2020-10-29 10:55:26.928885548 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":37}
+2020-10-29 10:55:26.929284642 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:26.929950671 [ThreadId 3396] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:26.930259009 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:26.930741448 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:26.931172069 [ThreadId 3522] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:26.948157603 [ThreadId 3608] - finish: codeLens (took 0.02s)
+2020-10-29 10:55:26.948256904 [ThreadId 3609] - finish: kick (took 0.02s)
+2020-10-29 10:55:26.948219129 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":2},"end":{"line":7,"character":36}},"source":"typecheck","message":"• Couldn't match expected type ‘[Char]\n                                -> (String -> IO ()) -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to three arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc \"lol\" putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc \"lol\" putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:26.949330816 [ThreadId 3613] - finish:  (took 0.00s)
+2020-10-29 10:55:26.950482075 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":37}
+2020-10-29 10:55:26.957721489 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":38}
+2020-10-29 10:55:26.958814585 [ThreadId 3618] - finish: Formatter (took 0.00s)
+2020-10-29 10:55:26.959068009 [ThreadId 3617] - Formatter.doFormatting: contents="import Lib (someFunc)\n\nmain :: IO ()\nmain =\n  someFunc\n    \"lol\"\n    putStrLn\n    \"Test suite not yet implemented\"\n"
+2020-10-29 10:55:26.959592871 [ThreadId 3620] - finish: Ormolu (took 0.00s)
+2020-10-29 10:55:26.965413157 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":38}
+2020-10-29 10:55:27.042093266 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}}}
+2020-10-29 10:55:27.042614004 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",OnDisk),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:55:27.043293116 [ThreadId 3511] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:27.043528929 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:27.043869303 [ThreadId 21] - Saved text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:27.063783338 [ThreadId 3732] - finish: kick (took 0.02s)
+2020-10-29 10:55:29.405657582 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:55:29.406028637 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":20673,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:55:29.406490578 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:55:29.414835451 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:55:29.41503073 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["20754:eval:evalCommand","20754:ghcide:typesignature.add","20754:importLens:ImportLensCommand","20754:pragmas:addPragma","20754:retrie:retrieCommand","20754:tactic:tacticsAutoCommand","20754:tactic:tacticsIntrosCommand","20754:tactic:tacticsDestructCommand","20754:tactic:tacticsHomomorphismCommand","20754:tactic:tacticsDestructLambdaCaseCommand","20754:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:55:29.416068283 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:55:29.416379076 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:55:29.416461476 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"import Lib (someFunc)\n\nmain :: IO ()\nmain =\n  someFunc\n    \"lol\"\n    putStrLn\n    \"Test suite not yet implemented\"\n","uri":"file:///tmp/lols/test/Spec.hs","version":0}}}
+2020-10-29 10:55:29.416620846 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":1}
+2020-10-29 10:55:29.416789724 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:55:29.416874339 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:55:29.41702923 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:55:29.417214643 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:29.417311126 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:29.417366375 [ThreadId 21] - Opened text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:55:29.417510319 [ThreadId 47] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:55:29.418274821 [ThreadId 65] - Consulting the cradle for "test/Spec.hs"
+2020-10-29 10:55:30.916086506 [ThreadId 65] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test","-i/tmp/lols/test","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/lols-test-tmp","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-package-id=lols-0.1.0.0-HWdZs8N8U517rrHkgeb9yv","-rtsopts","-with-rtsopts=-N","-optP-include","-optP/tmp/lols/.stack-work/ghci/382e1dbe/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/bba63d2d/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:55:30.952401411 [ThreadId 65] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-128db985f583e7e0dd97e5cebd21bd340fb08cc0
+2020-10-29 10:55:30.952561555 [ThreadId 65] - Making new HscEnv[main]
+2020-10-29 10:55:30.958091839 [ThreadId 65] - New Component Cache HscEnvEq: (([],Just HscEnvEq 2),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:55:30.959699196 [ThreadId 65] - Known files updated: fromList [(TargetFile NormalizedFilePath "/tmp/lols/test/Spec.hs",["/tmp/lols/test/Spec.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen/Paths_lols.hs"])]
+2020-10-29 10:55:30.960051719 [ThreadId 36] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:55:30.960137234 [ThreadId 65] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:55:30.990072922 [ThreadId 225] - finish: kick (took 0.03s)
+2020-10-29 10:55:30.990061182 [ThreadId 224] - finish: codeLens (took 0.03s)
+2020-10-29 10:55:30.990177065 [ThreadId 227] - finish: InitialLoad (took 0.03s)
+2020-10-29 10:55:30.990120241 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":2},"end":{"line":7,"character":36}},"source":"typecheck","message":"• Couldn't match expected type ‘[Char]\n                                -> (String -> IO ()) -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to three arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc \"lol\" putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc \"lol\" putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:55:30.990365508 [ThreadId 231] - finish:  (took 0.00s)
+2020-10-29 10:55:30.991166103 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}
+2020-10-29 10:56:16.497256394 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain = \n  someFunc \"lol\"\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":1}}}
+2020-10-29 10:56:16.498084324 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":2}
+2020-10-29 10:56:16.499261464 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:16.500031442 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:16.499945466 [ThreadId 84] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:16.500546211 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:16.500826962 [ThreadId 246] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:16.514041927 [ThreadId 302] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:16.514168001 [ThreadId 301] - finish: kick (took 0.01s)
+2020-10-29 10:56:16.514117045 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":2},"end":{"line":5,"character":43}},"source":"typecheck","message":"• Couldn't match expected type ‘[Char]\n                                -> (String -> IO ()) -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to three arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc \"lol\" putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc \"lol\" putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:16.515154317 [ThreadId 306] - finish:  (took 0.00s)
+2020-10-29 10:56:16.516185963 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":2}
+2020-10-29 10:56:20.775777688 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain = \n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":2}}}
+2020-10-29 10:56:20.776122457 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":3}
+2020-10-29 10:56:20.776283134 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:20.776483294 [ThreadId 236] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:20.776536087 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:20.776578031 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:20.776717261 [ThreadId 323] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:20.780399675 [ThreadId 377] - finish: kick (took 0.00s)
+2020-10-29 10:56:20.780408015 [ThreadId 376] - finish: codeLens (took 0.00s)
+2020-10-29 10:56:20.780386787 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":2},"end":{"line":5,"character":43}},"source":"typecheck","message":"• Couldn't match expected type ‘(String -> IO ())\n                                -> [Char] -> IO ()’\n              with actual type ‘IO ()’\n• The function ‘someFunc’ is applied to two arguments,\n  but its type ‘IO ()’ has none\n  In the expression:\n    someFunc putStrLn \"Test suite not yet implemented\"\n  In an equation for ‘main’:\n      main = someFunc putStrLn \"Test suite not yet implemented\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:20.780609678 [ThreadId 381] - finish:  (took 0.00s)
+2020-10-29 10:56:20.780870774 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":3}
+2020-10-29 10:56:21.352641794 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain =  \n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":3}}}
+2020-10-29 10:56:21.353386333 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":4}
+2020-10-29 10:56:21.353784006 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:21.354578463 [ThreadId 311] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:21.354829794 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:21.355008844 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:21.355457396 [ThreadId 396] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:21.369248809 [ThreadId 451] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:21.369317862 [ThreadId 452] - finish: kick (took 0.01s)
+2020-10-29 10:56:21.370324353 [ThreadId 456] - finish:  (took 0.00s)
+2020-10-29 10:56:21.371346224 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":4}
+2020-10-29 10:56:21.42873314 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain =  d\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":4}}}
+2020-10-29 10:56:21.42954314 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":5}
+2020-10-29 10:56:21.429889102 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:21.430511038 [ThreadId 386] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:21.430763191 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:21.431092996 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:21.431439063 [ThreadId 473] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:21.445382199 [ThreadId 527] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:21.445515231 [ThreadId 526] - finish: kick (took 0.01s)
+2020-10-29 10:56:21.445493957 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":3,"character":8},"end":{"line":3,"character":9}},"source":"typecheck","message":"Variable not in scope:\n  d :: IO () -> (String -> IO ()) -> [Char] -> IO ()"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:21.44660886 [ThreadId 531] - finish:  (took 0.00s)
+2020-10-29 10:56:21.447687349 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":5}
+2020-10-29 10:56:21.511564461 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib ( someFunc )\n\nmain :: IO ()\nmain =  do\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":5}}}
+2020-10-29 10:56:21.512328797 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":6}
+2020-10-29 10:56:21.514539811 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:21.515262349 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:21.515508315 [ThreadId 461] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:21.515794079 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:21.516073699 [ThreadId 545] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:21.525324233 [ThreadId 602] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:21.525314563 [ThreadId 603] - finish: kick (took 0.01s)
+2020-10-29 10:56:21.526048221 [ThreadId 608] - finish:  (took 0.00s)
+2020-10-29 10:56:21.526497607 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":6}
+2020-10-29 10:56:21.626695426 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:22.367411297 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":7}
+2020-10-29 10:56:22.368012224 [ThreadId 613] - finish: Formatter (took 0.00s)
+2020-10-29 10:56:22.368059179 [ThreadId 612] - Formatter.doFormatting: contents="import Lib ( someFunc )\n\nmain :: IO ()\nmain =  do\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"
+2020-10-29 10:56:22.368369084 [ThreadId 615] - finish: Ormolu (took 0.00s)
+2020-10-29 10:56:22.376640759 [ThreadId 7] - <--2--{"result":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":23}},"newText":"import Lib (someFunc)"},{"range":{"start":{"line":3,"character":0},"end":{"line":3,"character":10}},"newText":"main = do"}],"jsonrpc":"2.0","id":7}
+2020-10-29 10:56:22.472852722 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}}}
+2020-10-29 10:56:22.473462542 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",OnDisk)]
+2020-10-29 10:56:22.474152966 [ThreadId 536] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:22.474469715 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:22.474871549 [ThreadId 21] - Saved text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:22.476691505 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"import Lib (someFunc)\n\nmain :: IO ()\nmain = do\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n"}],"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs","version":6}}}
+2020-10-29 10:56:22.477644536 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":8}
+2020-10-29 10:56:22.478056301 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:22.478708682 [ThreadId 621] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:22.47894263 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:22.479232404 [ThreadId 21] - Modified text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:22.479645841 [ThreadId 677] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:22.48808112 [ThreadId 743] - Typechecking reverse dependencies forNormalizedFilePath "/tmp/lols/test/Spec.hs": []
+2020-10-29 10:56:22.488376309 [ThreadId 743] - finish: ParentTC (took 0.01s)
+2020-10-29 10:56:22.493152404 [ThreadId 746] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:22.493260556 [ThreadId 745] - finish: kick (took 0.01s)
+2020-10-29 10:56:22.494369723 [ThreadId 751] - finish:  (took 0.00s)
+2020-10-29 10:56:22.495267972 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":8}
+2020-10-29 10:56:25.562678951 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: IO ()\nsomeFunc = putStrLn \"someFunc\"\n","uri":"file:///tmp/lols/src/Lib.hs","version":0}}}
+2020-10-29 10:56:25.562873014 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":9}
+2020-10-29 10:56:25.563033009 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:25.563355068 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:25.563484628 [ThreadId 21] - Opened text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:25.563507276 [ThreadId 661] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:25.563596717 [ThreadId 766] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:25.56430284 [ThreadId 784] - Consulting the cradle for "src/Lib.hs"
+2020-10-29 10:56:26.574992448 [ThreadId 784] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-i/tmp/lols/src","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-optP-include","-optP/tmp/lols/.stack-work/ghci/46cf6a0e/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/6f695459/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:56:26.610920225 [ThreadId 784] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-831f25c391879b95c55ac15ed4cd5092b3ac9c22
+2020-10-29 10:56:26.611066705 [ThreadId 784] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-831f25c391879b95c55ac15ed4cd5092b3ac9c22
+2020-10-29 10:56:26.611125888 [ThreadId 784] - Making new HscEnv[main,main]
+2020-10-29 10:56:26.617063302 [ThreadId 784] - New Component Cache HscEnvEq: (([],Just HscEnvEq 23),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:56:26.618358716 [ThreadId 784] - New Component Cache HscEnvEq: (([],Just HscEnvEq 24),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:56:26.620750332 [ThreadId 784] - Known files updated: fromList [(TargetModule Lib,["/tmp/lols/src/Lib.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/test/Spec.hs",["/tmp/lols/test/Spec.hs","/tmp/lols/test/Spec.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen/Paths_lols.hs","/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen/Paths_lols.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/src/Lib.hs",["/tmp/lols/test/Spec.hs"])]
+2020-10-29 10:56:26.621197857 [ThreadId 756] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:26.621275153 [ThreadId 784] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:26.637018297 [ThreadId 1044] - finish: codeLens (took 0.02s)
+2020-10-29 10:56:26.637413152 [ThreadId 1051] - finish:  (took 0.00s)
+2020-10-29 10:56:26.637592371 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":9}
+2020-10-29 10:56:26.638040896 [ThreadId 1054] - finish: kick (took 0.02s)
+2020-10-29 10:56:26.63820808 [ThreadId 1058] - finish: InitialLoad (took 0.02s)
+2020-10-29 10:56:26.995473399 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: SIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":1}}}
+2020-10-29 10:56:26.99618288 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":10}
+2020-10-29 10:56:26.996647877 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:26.997234577 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:26.997544568 [ThreadId 835] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:26.997518412 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:26.998099706 [ThreadId 1069] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.010214857 [ThreadId 1159] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.010333484 [ThreadId 1160] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.010245298 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":15}},"source":"typecheck","message":"Not in scope: type constructor or class ‘SIO’\nPerhaps you meant ‘IO’ (imported from Prelude)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.011209161 [ThreadId 1164] - finish:  (took 0.00s)
+2020-10-29 10:56:27.011894303 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":10}
+2020-10-29 10:56:27.111339797 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: StIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":2}}}
+2020-10-29 10:56:27.112099433 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":11}
+2020-10-29 10:56:27.112462474 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.113180057 [ThreadId 1062] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.113407576 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.113719252 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.113987654 [ThreadId 1175] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.125151353 [ThreadId 1266] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.125200104 [ThreadId 1267] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.12523876 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":16}},"source":"typecheck","message":"Not in scope: type constructor or class ‘StIO’"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.126166412 [ThreadId 1271] - finish:  (took 0.00s)
+2020-10-29 10:56:27.12690842 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":11}
+2020-10-29 10:56:27.282385451 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: StrIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":3}}}
+2020-10-29 10:56:27.283127241 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":12}
+2020-10-29 10:56:27.28350245 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.284225296 [ThreadId 1169] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.28446134 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.284644678 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.285070835 [ThreadId 1283] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.298441257 [ThreadId 1373] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.298541498 [ThreadId 1374] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.298537423 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":17}},"source":"typecheck","message":"Not in scope: type constructor or class ‘StrIO’"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.299316295 [ThreadId 1378] - finish:  (took 0.00s)
+2020-10-29 10:56:27.300018071 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":12}
+2020-10-29 10:56:27.304684489 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: StriIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":4}}}
+2020-10-29 10:56:27.305375036 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":13}
+2020-10-29 10:56:27.306019733 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.306553517 [ThreadId 1276] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.306821571 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.307165155 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.307576772 [ThreadId 1398] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.319266893 [ThreadId 1481] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.319342751 [ThreadId 1480] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.319298228 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":18}},"source":"typecheck","message":"Not in scope: type constructor or class ‘StriIO’\nPerhaps you meant ‘String’ (imported from Prelude)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.319850222 [ThreadId 1485] - finish:  (took 0.00s)
+2020-10-29 10:56:27.320332459 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":13}
+2020-10-29 10:56:27.399306741 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: StrinIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":5}}}
+2020-10-29 10:56:27.400030948 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":14}
+2020-10-29 10:56:27.400406517 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.4012638 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.401756158 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.4016564 [ThreadId 1385] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.402008804 [ThreadId 1500] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.414646554 [ThreadId 1587] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.414987494 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":19}},"source":"typecheck","message":"Not in scope: type constructor or class ‘StrinIO’\nPerhaps you meant ‘String’ (imported from Prelude)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.41476086 [ThreadId 1588] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.415528055 [ThreadId 1592] - finish:  (took 0.00s)
+2020-10-29 10:56:27.416347353 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":14}
+2020-10-29 10:56:27.495304254 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: StringIO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":6}}}
+2020-10-29 10:56:27.496044073 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":15}
+2020-10-29 10:56:27.496448098 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.497110806 [ThreadId 1490] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.497339218 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.497655087 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.497939657 [ThreadId 1606] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.510542299 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":20}},"source":"typecheck","message":"Not in scope: type constructor or class ‘StringIO’\nPerhaps you meant ‘String’ (imported from Prelude)"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.510665984 [ThreadId 1694] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.51067583 [ThreadId 1695] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.511585511 [ThreadId 1699] - finish:  (took 0.00s)
+2020-10-29 10:56:27.512759 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":15}
+2020-10-29 10:56:27.534085888 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String IO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":7}}}
+2020-10-29 10:56:27.534430564 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":16}
+2020-10-29 10:56:27.534604298 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.534849533 [ThreadId 1597] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.534926288 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.534996118 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.535240226 [ThreadId 1720] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.539684213 [ThreadId 1802] - finish: codeLens (took 0.00s)
+2020-10-29 10:56:27.539715901 [ThreadId 1801] - finish: kick (took 0.00s)
+2020-10-29 10:56:27.539706402 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":12},"end":{"line":4,"character":24}},"source":"typecheck","message":"• Expected kind ‘(* -> *) -> * -> *’, but ‘String’ has kind ‘*’\n• In the type signature: someFunc :: String IO ()"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.54004725 [ThreadId 1806] - finish:  (took 0.00s)
+2020-10-29 10:56:27.540280389 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":16}
+2020-10-29 10:56:27.757390486 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String -IO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":8}}}
+2020-10-29 10:56:27.758146234 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":17}
+2020-10-29 10:56:27.758559064 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:27.759471071 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:27.759720557 [ThreadId 1704] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:27.760037394 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:27.760312477 [ThreadId 1822] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:27.771766648 [ThreadId 1908] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:27.771802833 [ThreadId 1909] - finish: kick (took 0.01s)
+2020-10-29 10:56:27.771826018 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":4,"character":19},"end":{"line":4,"character":20}},"source":"typecheck","message":"Illegal operator ‘-’ in type ‘String - IO ()’\n  Use TypeOperators to allow operators in types"},{"severity":1,"range":{"start":{"line":4,"character":19},"end":{"line":4,"character":20}},"source":"typecheck","message":"Not in scope: type constructor or class ‘-’"}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:27.772932159 [ThreadId 1913] - finish:  (took 0.00s)
+2020-10-29 10:56:27.77412957 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":17}
+2020-10-29 10:56:28.102405911 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String ->IO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":9}}}
+2020-10-29 10:56:28.103120455 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":18}
+2020-10-29 10:56:28.103494374 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:28.104241242 [ThreadId 1811] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:28.104471253 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:28.104643669 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:28.1051 [ThreadId 1931] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:28.118941999 [ThreadId 2016] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:28.119109204 [ThreadId 2015] - finish: kick (took 0.01s)
+2020-10-29 10:56:28.11907689 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[{"severity":1,"range":{"start":{"line":5,"character":11},"end":{"line":5,"character":30}},"source":"typecheck","message":"• Couldn't match expected type ‘String -> IO ()’\n              with actual type ‘IO ()’\n• Possible cause: ‘putStrLn’ is applied to too many arguments\n  In the expression: putStrLn \"someFunc\"\n  In an equation for ‘someFunc’: someFunc = putStrLn \"someFunc\""}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:28.119896179 [ThreadId 2020] - finish:  (took 0.00s)
+2020-10-29 10:56:28.120728664 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":18}
+2020-10-29 10:56:28.244659612 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn \"someFunc\"\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":10}}}
+2020-10-29 10:56:28.245501971 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":19}
+2020-10-29 10:56:28.245872762 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:28.246571035 [ThreadId 1918] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:28.246855562 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:28.247338795 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:28.247612709 [ThreadId 2040] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:28.261630532 [ThreadId 2123] - finish: codeLens (took 0.01s)
+2020-10-29 10:56:28.26179598 [ThreadId 2122] - finish: kick (took 0.01s)
+2020-10-29 10:56:28.262617641 [ThreadId 2127] - finish:  (took 0.00s)
+2020-10-29 10:56:28.26356779 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":19}
+2020-10-29 10:56:30.36400175 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":11}}}
+2020-10-29 10:56:30.364339153 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":20}
+2020-10-29 10:56:30.364550229 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:30.364836287 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:30.364947848 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:30.365075735 [ThreadId 2025] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:30.365098214 [ThreadId 2141] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:30.368295793 [ThreadId 2230] - finish: codeLens (took 0.00s)
+2020-10-29 10:56:30.368354022 [ThreadId 2231] - finish: kick (took 0.00s)
+2020-10-29 10:56:30.368583175 [ThreadId 2236] - finish:  (took 0.00s)
+2020-10-29 10:56:30.368740526 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":20}
+2020-10-29 10:56:30.469139854 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/src/Lib.hs","diagnostics":[]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:56:31.436708619 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":21}
+2020-10-29 10:56:31.437716857 [ThreadId 2241] - finish: Formatter (took 0.00s)
+2020-10-29 10:56:31.437777493 [ThreadId 2240] - Formatter.doFormatting: contents="module Lib\n    ( someFunc\n    ) where\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n"
+2020-10-29 10:56:31.438400361 [ThreadId 2243] - finish: Ormolu (took 0.00s)
+2020-10-29 10:56:31.444151133 [ThreadId 7] - <--2--{"result":[{"range":{"start":{"line":1,"character":0},"end":{"line":2,"character":11}},"newText":"  ( someFunc,\n  )\nwhere"}],"jsonrpc":"2.0","id":21}
+2020-10-29 10:56:31.541367639 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didChange","params":{"contentChanges":[{"text":"module Lib\n  ( someFunc,\n  )\nwhere\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n"}],"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs","version":12}}}
+2020-10-29 10:56:31.541641684 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":22}
+2020-10-29 10:56:31.541815088 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:56:31.542074733 [ThreadId 2132] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:31.542158863 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:31.542246928 [ThreadId 21] - Modified text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:31.542520061 [ThreadId 2265] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:31.54711192 [ThreadId 2348] - finish: codeLens (took 0.00s)
+2020-10-29 10:56:31.547128223 [ThreadId 2347] - finish: kick (took 0.00s)
+2020-10-29 10:56:31.547519817 [ThreadId 2353] - finish:  (took 0.00s)
+2020-10-29 10:56:31.547969951 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":22}
+2020-10-29 10:56:31.549900127 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":23}
+2020-10-29 10:56:31.55029307 [ThreadId 2358] - finish: Formatter (took 0.00s)
+2020-10-29 10:56:31.550298519 [ThreadId 2357] - Formatter.doFormatting: contents="module Lib\n  ( someFunc,\n  )\nwhere\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n"
+2020-10-29 10:56:31.550470021 [ThreadId 2360] - finish: Ormolu (took 0.00s)
+2020-10-29 10:56:31.552380522 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":23}
+2020-10-29 10:56:31.647782747 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}}}
+2020-10-29 10:56:31.648986465 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified),(NormalizedFilePath "/tmp/lols/src/Lib.hs",OnDisk)]
+2020-10-29 10:56:31.649880637 [ThreadId 2249] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:31.650177634 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:31.650590119 [ThreadId 21] - Saved text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:56:31.671557262 [ThreadId 2474] - finish: kick (took 0.02s)
+2020-10-29 10:56:51.33128321 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:56:51.332221882 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":21419,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:56:51.332945351 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:56:51.34766597 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:56:51.348171237 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["21500:eval:evalCommand","21500:ghcide:typesignature.add","21500:importLens:ImportLensCommand","21500:pragmas:addPragma","21500:retrie:retrieCommand","21500:tactic:tacticsAutoCommand","21500:tactic:tacticsIntrosCommand","21500:tactic:tacticsDestructCommand","21500:tactic:tacticsHomomorphismCommand","21500:tactic:tacticsDestructLambdaCaseCommand","21500:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:56:51.349437047 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:56:51.349740338 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:56:51.349894849 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"import Lib (someFunc)\n\nmain :: IO ()\nmain = do\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n","uri":"file:///tmp/lols/test/Spec.hs","version":0}}}
+2020-10-29 10:56:51.350105001 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":1}
+2020-10-29 10:56:51.350302726 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:56:51.35039793 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:56:51.350337408 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:56:51.350710503 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:51.350811393 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:51.350886086 [ThreadId 21] - Opened text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:56:51.351059033 [ThreadId 43] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:56:51.352171727 [ThreadId 65] - Consulting the cradle for "test/Spec.hs"
+2020-10-29 10:56:52.933482175 [ThreadId 65] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test","-i/tmp/lols/test","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/lols-test-tmp","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-package-id=lols-0.1.0.0-HWdZs8N8U517rrHkgeb9yv","-rtsopts","-with-rtsopts=-N","-optP-include","-optP/tmp/lols/.stack-work/ghci/382e1dbe/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/bba63d2d/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:56:52.978324784 [ThreadId 65] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-128db985f583e7e0dd97e5cebd21bd340fb08cc0
+2020-10-29 10:56:52.978517965 [ThreadId 65] - Making new HscEnv[main]
+2020-10-29 10:56:52.985237203 [ThreadId 65] - New Component Cache HscEnvEq: (([],Just HscEnvEq 2),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:56:52.986896063 [ThreadId 65] - Known files updated: fromList [(TargetFile NormalizedFilePath "/tmp/lols/test/Spec.hs",["/tmp/lols/test/Spec.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen/Paths_lols.hs"])]
+2020-10-29 10:56:52.987139601 [ThreadId 36] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:56:52.98719228 [ThreadId 65] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:56:53.016609592 [ThreadId 226] - finish: codeLens (took 0.03s)
+2020-10-29 10:56:53.016655066 [ThreadId 227] - finish: kick (took 0.03s)
+2020-10-29 10:56:53.016733016 [ThreadId 230] - finish: InitialLoad (took 0.03s)
+2020-10-29 10:56:53.016915432 [ThreadId 235] - finish:  (took 0.00s)
+2020-10-29 10:56:53.017137729 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}
+2020-10-29 10:56:54.385622011 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/hover","params":{"position":{"character":2,"line":4},"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":2}
+2020-10-29 10:56:54.385829879 [ThreadId 239] - GhcIde.hover entered (ideLogger)
+2020-10-29 10:56:54.385919366 [ThreadId 239] - Hover request at position 5:3 in file: /tmp/lols/test/Spec.hs
+2020-10-29 10:56:54.386471036 [ThreadId 244] - finish: C:GetHieAst (took 0.00s)
+2020-10-29 10:56:54.387898071 [ThreadId 249] - finish: C:GetDocMap (took 0.00s)
+2020-10-29 10:56:54.388217221 [ThreadId 7] - <--2--{"result":{"contents":{"kind":"markdown","value":"\n```haskell\nsomeFunc :: IO ()\n```\n\n*Defined in ‘Lib’*\n\n\n\n"},"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":10}}},"jsonrpc":"2.0","id":2}
+2020-10-29 10:57:01.140548635 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:57:01.140920916 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":21679,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:57:01.141319066 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:57:01.150102594 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:57:01.150465351 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["21769:eval:evalCommand","21769:ghcide:typesignature.add","21769:importLens:ImportLensCommand","21769:pragmas:addPragma","21769:retrie:retrieCommand","21769:tactic:tacticsAutoCommand","21769:tactic:tacticsIntrosCommand","21769:tactic:tacticsDestructCommand","21769:tactic:tacticsHomomorphismCommand","21769:tactic:tacticsDestructLambdaCaseCommand","21769:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:57:01.151364438 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:57:01.151568805 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:57:01.151778433 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"module Lib\n  ( someFunc,\n  )\nwhere\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n","uri":"file:///tmp/lols/src/Lib.hs","version":0}}}
+2020-10-29 10:57:01.151883069 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":1}
+2020-10-29 10:57:01.151982615 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:57:01.151978462 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/src/Lib.hs",Modified)]
+2020-10-29 10:57:01.152036698 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:57:01.152134036 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:57:01.152186213 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:57:01.152270148 [ThreadId 21] - Opened text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:57:01.152329833 [ThreadId 43] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:57:01.152939507 [ThreadId 65] - Consulting the cradle for "src/Lib.hs"
+2020-10-29 10:57:02.65083535 [ThreadId 65] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-i/tmp/lols/src","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-optP-include","-optP/tmp/lols/.stack-work/ghci/46cf6a0e/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/6f695459/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:57:02.686754734 [ThreadId 65] - Using interface files cache dir: /home/googleson78/.cache/ghcide/main-831f25c391879b95c55ac15ed4cd5092b3ac9c22
+2020-10-29 10:57:02.686916267 [ThreadId 65] - Making new HscEnv[main]
+2020-10-29 10:57:02.693343168 [ThreadId 65] - New Component Cache HscEnvEq: (([],Just HscEnvEq 2),fromList [("/tmp/lols/hie.yaml",Just 2020-10-29 08:54:52.143994857 UTC),("lols.cabal",Just 2020-10-29 08:54:39.960227522 UTC),("package.yaml",Just 2020-10-29 08:54:39.956227599 UTC),("stack.yaml",Just 2020-10-29 08:54:40.78821171 UTC)])
+2020-10-29 10:57:02.695439157 [ThreadId 65] - Known files updated: fromList [(TargetModule Lib,["/tmp/lols/src/Lib.hs"]),(TargetModule Paths_lols,["/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/autogen/Paths_lols.hs"]),(TargetFile NormalizedFilePath "/tmp/lols/src/Lib.hs",["/tmp/lols/src/Lib.hs"])]
+2020-10-29 10:57:02.695849488 [ThreadId 36] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:57:02.695900345 [ThreadId 65] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:57:02.698665705 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/formatting","params":{"options":{"insertSpaces":true,"tabSize":2},"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}},"id":2}
+2020-10-29 10:57:02.699069195 [ThreadId 173] - finish: Formatter (took 0.00s)
+2020-10-29 10:57:02.699076843 [ThreadId 172] - Formatter.doFormatting: contents="module Lib\n  ( someFunc,\n  )\nwhere\n\nsomeFunc :: String -> IO ()\nsomeFunc = putStrLn\n"
+2020-10-29 10:57:02.699221424 [ThreadId 175] - finish: Ormolu (took 0.00s)
+2020-10-29 10:57:02.702273921 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":2}
+2020-10-29 10:57:02.725231063 [ThreadId 234] - finish: codeLens (took 0.03s)
+2020-10-29 10:57:02.725296692 [ThreadId 235] - finish: kick (took 0.03s)
+2020-10-29 10:57:02.725408261 [ThreadId 238] - finish: InitialLoad (took 0.03s)
+2020-10-29 10:57:02.725539962 [ThreadId 243] - finish:  (took 0.00s)
+2020-10-29 10:57:02.725921266 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}
+2020-10-29 10:57:02.804201969 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///tmp/lols/src/Lib.hs"}}}
+2020-10-29 10:57:02.80470449 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/src/Lib.hs",OnDisk)]
+2020-10-29 10:57:02.805258167 [ThreadId 84] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:57:02.805469074 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:57:02.805775921 [ThreadId 21] - Saved text document: file:///tmp/lols/src/Lib.hs
+2020-10-29 10:57:02.813900143 [ThreadId 321] - Typechecking reverse dependencies forNormalizedFilePath "/tmp/lols/src/Lib.hs": []
+2020-10-29 10:57:02.814232745 [ThreadId 321] - finish: ParentTC (took 0.01s)
+2020-10-29 10:57:02.822145855 [ThreadId 325] - finish: kick (took 0.02s)
+2020-10-29 10:57:02.839277169 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"exit","params":null}
+2020-10-29 10:57:57.118019324 [ThreadId 5] - 
+
+
+
+
+haskell-lsp:Starting up server ...
+2020-10-29 10:57:57.118599412 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}}},"codeLens":{"dynamicRegistration":true},"colorProvider":{"dynamicRegistration":false},"completion":{"completionItem":{"insertReplaceSupport":false,"snippetSupport":false}},"declaration":{"linkSupport":true},"definition":{"linkSupport":true},"hover":{},"implementation":{"linkSupport":true},"publishDiagnostics":{"relatedInformation":true},"semanticHighlightingCapabilities":{"semanticHighlighting":true},"signatureHelp":{"signatureInformation":{"parameterInformation":{"labelOffsetSupport":true}}},"typeDefinition":{"linkSupport":true}},"workspace":{"applyEdit":true,"didChangeWatchedFiles":{"dynamicRegistration":true}}},"clientInfo":{"name":"LanguageClient-neovim","version":"0.1.158 "},"processId":22649,"rootPath":"/tmp/lols","rootUri":"file:///tmp/lols","trace":"off"},"id":0}
+2020-10-29 10:57:57.119010747 [ThreadId 5] - haskell-lsp:initializeRequestHandler: setting current dir to project root:/tmp/lols
+2020-10-29 10:57:57.127847677 [ThreadId 21] - Registering ide configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri (-1896486924664872441) "file:///tmp/lols"], clientSettings = hashed Nothing}
+2020-10-29 10:57:57.128274567 [ThreadId 7] - <--2--{"result":{"capabilities":{"typeDefinitionProvider":true,"foldingRangeProvider":false,"textDocumentSync":{"openClose":true,"change":2,"save":{}},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":true}},"implementationProvider":true,"documentRangeFormattingProvider":true,"documentHighlightProvider":true,"executeCommandProvider":{"commands":["22732:eval:evalCommand","22732:ghcide:typesignature.add","22732:importLens:ImportLensCommand","22732:pragmas:addPragma","22732:retrie:retrieCommand","22732:tactic:tacticsAutoCommand","22732:tactic:tacticsIntrosCommand","22732:tactic:tacticsDestructCommand","22732:tactic:tacticsHomomorphismCommand","22732:tactic:tacticsDestructLambdaCaseCommand","22732:tactic:tacticsHomomorphismLambdaCaseCommand"]},"renameProvider":false,"colorProvider":false,"definitionProvider":true,"hoverProvider":true,"codeActionProvider":true,"completionProvider":{"triggerCharacters":["."],"resolveProvider":false},"codeLensProvider":{},"documentSymbolProvider":true,"documentFormattingProvider":true}},"jsonrpc":"2.0","id":0}
+2020-10-29 10:57:57.129196013 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"initialized","params":{}}
+2020-10-29 10:57:57.129344805 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"registrations":[{"registerOptions":{"watchers":[{"kind":5,"globPattern":"**/*.hs"},{"kind":5,"globPattern":"**/*.hs-boot"},{"kind":5,"globPattern":"**/*.lhs"},{"kind":5,"globPattern":"**/*.lhs-boot"}]},"method":"workspace/didChangeWatchedFiles","id":"globalFileWatches"}]},"method":"client/registerCapability","id":0}
+2020-10-29 10:57:57.129507989 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"languageId":"haskell","text":"import Lib (someFunc)\n\nmain :: IO ()\nmain = do\n  someFunc\n  putStrLn \"Test suite not yet implemented\"\n","uri":"file:///tmp/lols/test/Spec.hs","version":0}}}
+2020-10-29 10:57:57.129704913 [ThreadId 5] - ---> {"jsonrpc":"2.0","method":"textDocument/codeLens","params":{"textDocument":{"uri":"file:///tmp/lols/test/Spec.hs"}},"id":1}
+2020-10-29 10:57:57.129858333 [ThreadId 5] - ---> {"jsonrpc":"2.0","error":{"code":-32603,"message":"entity not found"},"id":0}
+2020-10-29 10:57:57.12990373 [ThreadId 5] - haskell-lsp:Got reply message:"{\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32603,\"message\":\"entity not found\"},\"id\":0}"
+2020-10-29 10:57:57.129873355 [ThreadId 21] - Set files of interest to: [(NormalizedFilePath "/tmp/lols/test/Spec.hs",Modified)]
+2020-10-29 10:57:57.130095264 [ThreadId 20] - Finishing build session(exception: AsyncCancelled)
+2020-10-29 10:57:57.13015789 [ThreadId 21] - Restarting build session (aborting the previous one took 0.00s)
+2020-10-29 10:57:57.130197031 [ThreadId 21] - Opened text document: file:///tmp/lols/test/Spec.hs
+2020-10-29 10:57:57.130444737 [ThreadId 52] - Plugin.makeCodeLens (ideLogger)
+2020-10-29 10:57:57.130952671 [ThreadId 65] - Consulting the cradle for "test/Spec.hs"
+2020-10-29 10:57:59.013640535 [ThreadId 65] - Session loading result: Right (ComponentOptions {componentOptions = ["-i","-odir=/tmp/lols/.stack-work/odir","-hidir=/tmp/lols/.stack-work/odir","-hide-all-packages","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test","-i/tmp/lols/test","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/global-autogen","-i/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build/lols-test/lols-test-tmp","-stubdir=/tmp/lols/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.0.1.0/build","-package-id=base-4.13.0.0","-package=lols-0.1.0.0","-rtsopts","-with-rtsopts=-N","-optP-include","-optP/tmp/lols/.stack-work/ghci/382e1dbe/cabal_macros.h","-ghci-script=/tmp/haskell-stack-ghci/bba63d2d/ghci-script","-package-db","/tmp/lols/.stack-work/install/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/snapshots/x86_64-linux-tinfo6/c97fc7812a536a97419acf0b3ec9889630dfaa3a0c95b510c56572f49592f636/8.8.4/pkgdb","-package-db","/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4/package.conf.d"], componentRoot = "/tmp/lols", componentDependencies = ["lols.cabal","package.yaml","stack.yaml"]},"/home/googleson78/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/lib/ghc-8.8.4")
+2020-10-29 10:57:59.047326338 [ThreadId 82] - finish: kick (took 1.92s)
+2020-10-29 10:57:59.047277357 [ThreadId 7] - <--2--{"jsonrpc":"2.0","params":{"uri":"file:///tmp/lols/test/Spec.hs","diagnostics":[{"severity":1,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}},"source":"cradle","message":"ghcide compiled by GHC 8.8 failed to load packages: <command line>: cannot satisfy -package lols-0.1.0.0\n    (use -v for more information). \nPlease ensure that ghcide is compiled with the same GHC installation as the project."}]},"method":"textDocument/publishDiagnostics"}
+2020-10-29 10:57:59.04728325 [ThreadId 83] - finish: codeLens (took 1.92s)
+2020-10-29 10:57:59.047668215 [ThreadId 89] - finish:  (took 0.00s)
+2020-10-29 10:57:59.048684821 [ThreadId 7] - <--2--{"result":[],"jsonrpc":"2.0","id":1}

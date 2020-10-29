@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "lols:lib"
+
+    - path: "./app/Main.hs"
+      component: "lols:exe:lols-exe"
+
+    - path: "./test"
+      component: "lols:test:lols-test"
